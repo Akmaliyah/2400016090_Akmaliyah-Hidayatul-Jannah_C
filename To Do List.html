@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        #taskList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #taskList li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #taskList li.finish{
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .close {
+            color: red;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>My To-Do List</h2>
+        <input type="text" id="newTask" placeholder="Add a new task...">
+        <button onclick="addTask()">Add</button>
+
+        <ul id="taskList">
+        </ul>
+    </div>
+
+    <script>
+        function addTask(){
+            const taskInput = document.getElementById("newTask");
+            const taskList = document.getElementById("taskList");
+            const taskText = taskInput.value.trim();
+           
+            if(taskText ===""){
+                return;
+            }
+            
+            const newList = document.createElement("li");
+            taskList.appendChild(newList);
+            newList.textContent = taskText; 
+
+            newList.ondblclick = function(){
+                editTask(newList)
+            };
+
+            newList.onclick = function(){
+                newList.classList.toggle("finish");
+            };
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "X";
+            deleteButton.className = "close";
+            deleteButton.onclick = function(event){
+                event.stopPropagation();
+                deleteTask(newList);
+            };
+
+            newList.appendChild(deleteButton);
+            taskInput.value = "";
+        }
+        
+        function deleteTask(element) {
+            const taskList = document.getElementById("taskList");
+            taskList.removeChild(element);
+        }
+
+        function editTask(element) {
+            const currentText=element.firstChild.textContent;
+            const editInput = document.createElement("input");
+            editInput.type = "text";
+            editInput.value = currentText;
+            editInput.style.width="80%";
+
+            element.textContent = "";
+            element.appendChild(editInput);
+            editInput.focus();
+            
+            editInput.addEventListener("keypress", function (e){
+                if (e.key == "Enter"){
+                    const newText = editInput.value.trim();
+                    if (newText !==""){
+                        element.textContent=newText;
+ 
+                       const deleteButton = document.createElement("button");
+                        deleteButton.textContent = "X";
+                        deleteButton.className = "close";
+                        deleteButton.onclick = function() {
+                            event.stopPropagation();
+                            delete(element);
+                        };
+                    element.appendChild(deleteButton)
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

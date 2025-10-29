@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Aku </title>
+    <style>
+      body{
+        display: grid;
+        min-height: 100px;
+      }
+      .header{
+        display: flex;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background: #94b4dd;
+        padding: 20px;
+        border-radius:8px;
+      }
+
+      .grid-container{
+        display: grid;
+        gap: 15px;
+        padding: 15px;
+        min-height: 100vh;
+        background-color: #ecebeb;
+        grid-template-columns: 800px;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        .grid-container {
+          flex-direction: column;
+          grid-template-columns: 1fr;
+          grid-template-areas: 
+          "header"
+          "main"
+          "display:none"
+          "footer";
+        };
+      }
+
+      .child{
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 13px;
+        border-radius: 15px;
+        box-shadow: 6px 6px rgba(0,0,0,0.05);
+      }
+      .profil-section{
+        text-align: center;
+        margin-bottom: 25px;
+        
+      }
+      .profil-image{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid blue; 
+        padding: 4px;
+        object-fit: cover;
+      }
+      
+      h1{
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: rgb(93, 93, 231);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      p{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .sibling{
+        padding-left: 10px;
+        border-left: 4px solid rgb(93, 93, 231);
+        margin-bottom: 8px;
+        line-height: 1.5;
+        border-radius: 2px;
+        background-color: rgb(226, 223, 223);
+        line-height: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+    </style>
+</head>
+<body class="grid-container"></body>
+  <header class="header"></header>
+   
+      <div class="profil-section">
+        <img src="profil akmal.jpg" alt="foto" class="profil-image">
+        <h2>Akmaliyah Hidayatul Jannah</h2>
+       
+      </div>
+ 
+
+<body class = "flex-container">
+    <div class="child">
+      <h1> About Me </h1>
+      <p> Aku Akmaliyah Hidayatul Jannah</p>
+      <p> Mahasiswa Sistem Informasi Semester 3 dari Universitas Ahmad Dahlan. Berpengalaman dalam kegiatan kepanitiaan, organisasi dan kegiatan outdoor.
+        Banyak hal yang saya sukai beberapa diantaranya yaitu Hobi menyanyi dan mendengarkan lagu. 
+      </p> 
+    </div>
+
+    <div class="child">
+      <h1> project</h1>
+      <div class="sibling">  Project 1 - Mempersiapkan kegiatan Training Of Motivation 2026 </div>
+      <div class="sibling">  Project 2 - Membuat website profil pribadi</div>
+    </div>
+
+    <div class="child">
+      <h1> Contact</h1>
+      <div>
+      <p> Email: akmalhidayatuljannah@gmail.com</p>
+      <p> Linkidn: Akmaliyah Hidayatul Jannah, klik di<a href="https://www.linkedin.com/in/akmaliyah-hidayatul-jannah Nama Vanity URL">sini</a></p>
+    </div>
+  
+  </div>
+</body>
+</body>
+</html>

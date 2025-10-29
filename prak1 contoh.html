@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Akmaliyah</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "main"
+                "footer";
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+
+        header{
+            grid-area: header;
+            background-color: brown;
+            padding: 15px 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container{
+            display: flex;
+            background-color:beige;
+        }
+        .parent{
+            background-color: rgb(0, 255, 255);
+        }
+    </style>
+
+</head>
+<body class="grid-container">
+
+    <header class="header">
+        <div class="nav-container">
+            <h1 class="foto"> nama saya</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li> <a href="about me"> about me</a></li>
+                    <li> <a href="proyek"> proyek</a></li>
+                    <li> <a href="contact"> contact</a></li>
+                </ul>
+            </nav> 
+        </div>
+    </header>   
+    
+    <main-content class="main-content"></main-content>
+        <h1> Akmaliyah Hidayatul Jannah</h1>
+        <h2>Mahasiswa Sistem Informasi </h2>
+   
+        <p> Hallo! saya mahasiswa sistem informasi semester 3  yang semangat belajar 
+            dan berusaha untuk bisa mencapai yang diinginkan
+        </p>
+    
+<img src="foto akmal.jpg" alt="foto" width="150">
+    <h3> hobi saya dan keahlian:</h3>
+    <ul>
+        <li>Menyanyi</li>
+        <li>Explore hal baru</li>
+        <li>Microsoft word</li>
+        <li>canva</li>
+    </ul>
+
+<p>Kunjungi profil LinkedIn saya di <a href="https://www.linkedin.com/in/akmaliyah-hidayatul-jannah Nama Vanity URL">sini</a>
+</p>
+
+</body>
+</html>
